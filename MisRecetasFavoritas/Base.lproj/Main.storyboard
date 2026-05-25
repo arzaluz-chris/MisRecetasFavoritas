@@ -1,24 +1,263 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NAV-01-cTr">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack views" minToolsVersion="7.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="nav-SC-1">
+            <objects>
+                <navigationController id="NAV-01-cTr" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" prefersLargeTitles="YES" id="nbc-1A-qww">
+                        <rect key="frame" x="0.0" y="59" width="393" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="seg-roo-tvc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pla-na-1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-778" y="4"/>
+        </scene>
+        <!--Mis Recetas-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="tbl-Vw-123">
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <color key="backgroundColor" red="1.0" green="0.97254901960784312" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="RecipeCell" rowHeight="130" id="cel-ab-456" customClass="RecipeTableViewCell" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="130"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cel-ab-456" id="ctv-xy-789">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="130"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="img-rc-111">
+                                                    <rect key="frame" x="16" y="10" width="110" height="110"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="110" id="wdt-11-111"/>
+                                                        <constraint firstAttribute="height" constant="110" id="hgt-11-111"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-nm-222">
+                                                    <rect key="frame" x="138" y="20" width="239" height="22"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-ds-333">
+                                                    <rect key="frame" x="138" y="46" width="239" height="34"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="img-rc-111" firstAttribute="leading" secondItem="ctv-xy-789" secondAttribute="leading" constant="16" id="lea-11-111"/>
+                                                <constraint firstItem="img-rc-111" firstAttribute="centerY" secondItem="ctv-xy-789" secondAttribute="centerY" id="cen-11-111"/>
+                                                <constraint firstItem="lbl-nm-222" firstAttribute="top" secondItem="ctv-xy-789" secondAttribute="topMargin" constant="8" id="top-22-222"/>
+                                                <constraint firstItem="lbl-nm-222" firstAttribute="leading" secondItem="img-rc-111" secondAttribute="trailing" constant="12" id="lea-22-222"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="lbl-nm-222" secondAttribute="trailing" id="tra-22-222"/>
+                                                <constraint firstItem="lbl-ds-333" firstAttribute="top" secondItem="lbl-nm-222" secondAttribute="bottom" constant="4" id="top-33-333"/>
+                                                <constraint firstItem="lbl-ds-333" firstAttribute="leading" secondItem="lbl-nm-222" secondAttribute="leading" id="lea-33-333"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="lbl-ds-333" secondAttribute="trailing" id="tra-33-333"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="descriptionLabel" destination="lbl-ds-333" id="out-ds-333"/>
+                                            <outlet property="nameLabel" destination="lbl-nm-222" id="out-nm-222"/>
+                                            <outlet property="recipeImageView" destination="img-rc-111" id="out-rc-111"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="1.0" green="0.97254901960784312" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="tbl-Vw-123" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="top-tb-123"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="tbl-Vw-123" secondAttribute="bottom" id="bot-tb-123"/>
+                            <constraint firstItem="tbl-Vw-123" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lea-tb-123"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tbl-Vw-123" secondAttribute="trailing" id="tra-tb-123"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Mis Recetas" largeTitleDisplayMode="always" id="nav-it-001"/>
+                    <connections>
+                        <outlet property="tableView" destination="tbl-Vw-123" id="out-tb-123"/>
+                        <segue destination="DET-ai-123" kind="show" identifier="showRecipeDetails" id="seg-sh-123"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="3.3482142857142856"/>
+        </scene>
+        <!--Recipe Details View Controller-->
+        <scene sceneID="det-sc-123">
+            <objects>
+                <viewController id="DET-ai-123" customClass="RecipeDetailsViewController" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="det-vi-123">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="scr-vi-123">
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cvo-vi-123">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="800"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="det-im-123">
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="280"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="280" id="hgt-im-123"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="det-nm-123">
+                                                <rect key="frame" x="16" y="296" width="361" height="33.666666666666686"/>
+                                                <fontDescription key="fontDescription" type="system" weight="bold" pointSize="26"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <!-- Metadata Stack View -->
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="stk-mt-123">
+                                                <rect key="frame" x="16" y="347" width="361" height="40"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🕐 Prep" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-pt-123">
+                                                        <rect key="frame" x="0.0" y="0.0" width="85" height="40"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
+                                                        <color key="textColor" red="0.75686274509803919" green="0.26666666666666666" blue="0.054901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🔥 Cook" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-ct-123">
+                                                        <rect key="frame" x="93" y="0.0" width="85" height="40"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
+                                                        <color key="textColor" red="0.75686274509803919" green="0.26666666666666666" blue="0.054901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🍽 Serv" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-sv-124">
+                                                        <rect key="frame" x="186" y="0.0" width="85" height="40"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
+                                                        <color key="textColor" red="0.75686274509803919" green="0.26666666666666666" blue="0.054901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="👨‍🍳 Diff" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-df-123">
+                                                        <rect key="frame" x="279" y="0.0" width="82" height="40"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
+                                                        <color key="textColor" red="0.75686274509803919" green="0.26666666666666666" blue="0.054901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="hgt-mt-123"/>
+                                                </constraints>
+                                            </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredientes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-ig-123">
+                                                <rect key="frame" x="16" y="403" width="361" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" weight="bold" pointSize="20"/>
+                                                <color key="textColor" red="0.14901960784313725" green="0.12156862745098039" blue="0.10196078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="txt-ig-123">
+                                                <rect key="frame" x="16" y="432" width="361" height="36"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instrucciones" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbl-in-123">
+                                                <rect key="frame" x="16" y="484" width="361" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" weight="bold" pointSize="20"/>
+                                                <color key="textColor" red="0.14901960784313725" green="0.12156862745098039" blue="0.10196078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="txt-in-123">
+                                                <rect key="frame" x="16" y="513" width="361" height="36"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="1.0" green="0.97254901960784312" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="det-im-123" firstAttribute="top" secondItem="cvo-vi-123" secondAttribute="top" id="top-di-123"/>
+                                            <constraint firstItem="det-im-123" firstAttribute="leading" secondItem="cvo-vi-123" secondAttribute="leading" id="lea-di-123"/>
+                                            <constraint firstAttribute="trailing" secondItem="det-im-123" secondAttribute="trailing" id="tra-di-123"/>
+                                            <constraint firstItem="det-nm-123" firstAttribute="top" secondItem="det-im-123" secondAttribute="bottom" constant="16" id="top-dn-123"/>
+                                            <constraint firstItem="det-nm-123" firstAttribute="leading" secondItem="cvo-vi-123" secondAttribute="leading" constant="16" id="lea-dn-123"/>
+                                            <constraint firstAttribute="trailing" secondItem="det-nm-123" secondAttribute="trailing" constant="16" id="tra-dn-123"/>
+                                            <!-- Stack view constraints -->
+                                            <constraint firstItem="stk-mt-123" firstAttribute="top" secondItem="det-nm-123" secondAttribute="bottom" constant="16" id="top-sm-123"/>
+                                            <constraint firstItem="stk-mt-123" firstAttribute="leading" secondItem="cvo-vi-123" secondAttribute="leading" constant="16" id="lea-sm-123"/>
+                                            <constraint firstAttribute="trailing" secondItem="stk-mt-123" secondAttribute="trailing" constant="16" id="tra-sm-123"/>
+                                            <!-- Ingredientes header linked to stack view -->
+                                            <constraint firstItem="lbl-ig-123" firstAttribute="top" secondItem="stk-mt-123" secondAttribute="bottom" constant="24" id="top-li-123"/>
+                                            <constraint firstItem="lbl-ig-123" firstAttribute="leading" secondItem="cvo-vi-123" secondAttribute="leading" constant="16" id="lea-li-123"/>
+                                            <constraint firstAttribute="trailing" secondItem="lbl-ig-123" secondAttribute="trailing" constant="16" id="tra-li-123"/>
+                                            <constraint firstItem="txt-ig-123" firstAttribute="top" secondItem="lbl-ig-123" secondAttribute="bottom" constant="8" id="top-ti-123"/>
+                                            <constraint firstItem="txt-ig-123" firstAttribute="leading" secondItem="cvo-vi-123" secondAttribute="leading" constant="16" id="lea-ti-123"/>
+                                            <constraint firstAttribute="trailing" secondItem="txt-ig-123" secondAttribute="trailing" constant="16" id="tra-ti-123"/>
+                                            <constraint firstItem="lbl-in-123" firstAttribute="top" secondItem="txt-ig-123" secondAttribute="bottom" constant="24" id="top-lin-123"/>
+                                            <constraint firstItem="lbl-in-123" firstAttribute="leading" secondItem="cvo-vi-123" secondAttribute="leading" constant="16" id="lea-lin-123"/>
+                                            <constraint firstAttribute="trailing" secondItem="lbl-in-123" secondAttribute="trailing" constant="16" id="tra-lin-123"/>
+                                            <constraint firstItem="txt-in-123" firstAttribute="top" secondItem="lbl-in-123" secondAttribute="bottom" constant="8" id="top-tin-123"/>
+                                            <constraint firstItem="txt-in-123" firstAttribute="leading" secondItem="cvo-vi-123" secondAttribute="leading" constant="16" id="lea-tin-123"/>
+                                            <constraint firstAttribute="trailing" secondItem="txt-in-123" secondAttribute="trailing" constant="16" id="tra-tin-123"/>
+                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="txt-in-123" secondAttribute="bottom" constant="30" id="bot-tin-123"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="cvo-vi-123" firstAttribute="top" secondItem="scr-vi-123" secondAttribute="top" id="scr-top-123"/>
+                                    <constraint firstItem="cvo-vi-123" firstAttribute="leading" secondItem="scr-vi-123" secondAttribute="leading" id="scr-lea-123"/>
+                                    <constraint firstItem="cvo-vi-123" firstAttribute="trailing" secondItem="scr-vi-123" secondAttribute="trailing" id="scr-tra-123"/>
+                                    <constraint firstItem="cvo-vi-123" firstAttribute="bottom" secondItem="scr-vi-123" secondAttribute="bottom" id="scr-bot-123"/>
+                                    <constraint firstItem="cvo-vi-123" firstAttribute="width" secondItem="scr-vi-123" secondAttribute="width" id="scr-wid-123"/>
+                                    <constraint firstItem="cvo-vi-123" firstAttribute="height" secondItem="scr-vi-123" secondAttribute="height" priority="250" id="scr-hgt-123"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="con-la-123"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="fra-la-123"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="det-sa-123"/>
+                        <color key="backgroundColor" red="1.0" green="0.97254901960784312" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="scr-vi-123" firstAttribute="top" secondItem="det-sa-123" secondAttribute="top" id="top-sv-123"/>
+                            <constraint firstItem="scr-vi-123" firstAttribute="leading" secondItem="det-sa-123" secondAttribute="leading" id="lea-sv-123"/>
+                            <constraint firstItem="det-sa-123" firstAttribute="trailing" secondItem="scr-vi-123" secondAttribute="trailing" id="tra-sv-123"/>
+                            <constraint firstItem="det-sa-123" firstAttribute="bottom" secondItem="scr-vi-123" secondAttribute="bottom" id="bot-sv-123"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="nav-de-123"/>
+                    <connections>
+                        <outlet property="cookTimeLabel" destination="lbl-ct-123" id="out-ct-123"/>
+                        <outlet property="difficultyLabel" destination="lbl-df-123" id="out-df-123"/>
+                        <outlet property="ingredientsTextView" destination="txt-ig-123" id="out-ig-123"/>
+                        <outlet property="instructionsTextView" destination="txt-in-123" id="out-in-123"/>
+                        <outlet property="nameLabel" destination="det-nm-123" id="out-dn-123"/>
+                        <outlet property="prepTimeLabel" destination="lbl-pt-123" id="out-pt-123"/>
+                        <outlet property="recipeImageView" destination="det-im-123" id="out-im-123"/>
+                        <outlet property="servingsLabel" destination="lbl-sv-124" id="out-sv-124"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="det-fr-123" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="906" y="3"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
