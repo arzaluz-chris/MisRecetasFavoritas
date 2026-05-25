@@ -24,8 +24,8 @@ Orientada a cautivar desde el primer momento, la aplicación presenta un estilo 
 ## 🎥 Demo de la Aplicación
 
 <div align="center">
-  <a href="https://youtu.be/u2MUkp1pkjY">
-    <img src="https://img.youtube.com/vi/u2MUkp1pkjY/maxresdefault.jpg" alt="Demo de la Aplicación" width="700" style="border-radius: 12px; box-shadow: 0px 4px 10px rgba(0,0,0,0.1);">
+  <a href="https://www.youtube.com/shorts/Wl3RA4ZqUjM">
+    <img src="https://img.youtube.com/vi/Wl3RA4ZqUjM/maxresdefault.jpg" alt="Demo de la Aplicación" width="350" style="border-radius: 12px; box-shadow: 0px 4px 10px rgba(0,0,0,0.1);">
   </a>
   <br>
   <p><i>Haz clic en la imagen en miniatura para ver el video demostrativo de la navegación y UI.</i></p>
